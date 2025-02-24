@@ -22,17 +22,29 @@
     let op = document.getElementById("operators");
     let second = document.getElementById("secondnum");
     let btn = document.getElementById("button");
+    let para = document.getElementById("paragraph");
 
     btn.addEventListener("click", function handleClick() {
     let firstValue = parseFloat(first.value);
     let opValue = op.value; 
-    let secondValue = parseFloat(second.value);
-
+    let secondValue = parseFloat(second.value); 
+    let wesee;
     switch (opValue) {
         case '+':
             console.log(firstValue + secondValue);
             break;
+            case '-':
+            console.log(firstValue - secondValue);
+            break;
+            case '*':
+            console.log(firstValue * secondValue);
+            break;
+            case '/':
+            wesee = firstValue / secondValue;
+            para.innerHTML = "Rezultats  " + wesee;
+            break;
     }
+
 });
 
 
