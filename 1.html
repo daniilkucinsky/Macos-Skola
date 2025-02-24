@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">Kalkulators</h1>
+    <label for="firstnum">1Num===></label>
+    <input type="text" id="firstnum" placeholder="Ievadiet pirmo skaitli">
+    <label for="operators">///</label>
+    <input type="text" id="operators" placeholder="Operators -+/*">
+    <label for="operators">///</label>
+    <label for="">2Num===></label>
+    <input type="text" id="secondnum" placeholder="Ivadiet ludzu otro skaitli">
+    <button id="button">Rekinat</button>
+    <p id="paragraph"></p>
+
+    <script>
+        let first = document.getElementById("firtsnum");
+        let op = document.getElementById("oprator");
+        let second = document.getElementById("secondnum");
+        let btn = document.getElementById("button");
+        let izvade = document.getElementById("paragraph");
+
+        btn.addEventListener("click" , function handleclick(){
+            alert("baaa");
+        });
+
+
+    </script>
+
+</body>
+</html>
