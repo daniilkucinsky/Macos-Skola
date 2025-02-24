@@ -29,20 +29,29 @@
     let opValue = op.value; 
     let secondValue = parseFloat(second.value); 
     let wesee;
+    
     switch (opValue) {
         case '+':
-            console.log(firstValue + secondValue);
-            break;
-            case '-':
-            console.log(firstValue - secondValue);
-            break;
-            case '*':
-            console.log(firstValue * secondValue);
-            break;
-            case '/':
-            wesee = firstValue / secondValue;
+        wesee = firstValue + secondValue;
             para.innerHTML = "Rezultats  " + wesee;
             break;
+            case '-':
+            wesee = firstValue - secondValue;
+            para.innerHTML = "Rezultats  " + wesee;
+            break;
+            case '*':
+            wesee = firstValue * secondValue;
+            para.innerHTML = "Rezultats  " + wesee;
+            break;
+            case '/':
+                if(secondValue==0){
+                    para.innerHTML = "Dalit ar nulli nevares";
+                    break;
+                }else{
+                    wesee = firstValue / secondValue;
+                    para.innerHTML = "Rezultats  " + wesee;
+                    break;
+                }
     }
 
 });
