@@ -18,15 +18,22 @@
     <p id="paragraph"></p>
 
     <script>
-        let first = document.getElementById("firtsnum");
-        let op = document.getElementById("oprator");
-        let second = document.getElementById("secondnum");
-        let btn = document.getElementById("button");
-        let izvade = document.getElementById("paragraph");
+      let first = document.getElementById("firstnum");
+    let op = document.getElementById("operators");
+    let second = document.getElementById("secondnum");
+    let btn = document.getElementById("button");
 
-        btn.addEventListener("click" , function handleclick(){
-            alert("baaa");
-        });
+    btn.addEventListener("click", function handleClick() {
+    let firstValue = parseFloat(first.value);
+    let opValue = op.value; 
+    let secondValue = parseFloat(second.value);
+
+    switch (opValue) {
+        case '+':
+            console.log(firstValue + secondValue);
+            break;
+    }
+});
 
 
     </script>
