@@ -25,18 +25,17 @@ font-weight: bold;
 
 <label for="max-points">Maksimālais punktu skaits:</label>
 <input type="number" id="max-points" required /><br /><br />
-// oki
+
 <label for="grading-scheme">Vērtēšanas shēma:</label>
 <select id="grading-scheme">
 <option value="percentage">Procentuālā vērtība (0-100)</option>
 <option value="letter">Burtu vērtējums (A, B, C utt.)</option></select
 ><br /><br />
 
-<button id="calculate-btn" >Aprēķināt vērtējumu</button>
-<p id="result"></p>
+<button>Aprēķināt vērtējumu</button>
+
 <script>
 const calculateBtn = document.getElementById("calculate-btn");
-const mistakeinput = document.getElementById("points")
 const nameInput = document.getElementById("name");
 const maxPointsInput = document.getElementById("max-points");
 const gradingSchemeSelect = document.getElementById("grading-scheme");
@@ -44,8 +43,8 @@ const resultDiv = document.getElementById("result");
 
 function handleClick() {
 const name = nameInput.value;
-const points = parseFloat(mistakeinput.value);
-const maxPoints = parseFloat(maxPointsInput.value);
+const points = parseFloat(pointsInput);
+const maxPoints = parseFloat(maxPointsInput);
 const gradingScheme = gradingSchemeSelect.value;
 
 // Validate inputs
@@ -59,7 +58,7 @@ resultDiv.innerHTML =
 return;
 }
 
-let grade = "";
+const grade = "";
 if (gradingScheme === "procenti") {
 const percentage = (points / maxPoints) * 100;
 grade = `Jūsu procentuālā vērtība ir: ${percentage.toFixed(2)}%`;
@@ -80,7 +79,7 @@ grade = "Jūsu burtu vērtējums ir: F";
 resultDiv.innerHTML = grade;
 }
 
-calculateBtn.addEventListener("click", handleClick);
+calculateBtn.addEventListener("click", handleClick());
 
 // === TERMINI un KODA PIEMĒRI ===
 // input, button, id, class, script, const, let, document, querySelector, getElementById,
