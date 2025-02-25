@@ -36,13 +36,13 @@
     <ul id="taskList"></ul>
 
     <script>
-        const addButton = document.getElementById("taskList");
-        const taskInput = document.getElementById("taskinput");
-        const taskList = document.getElementById("tasklist");
+        const addButton = document.getElementById("addTask");
+        const taskInput1 = document.getElementById("taskInput");
+        const taskList1 = document.getElementById("taskList");
 
         function addTask() {
-            const taskText = taskInput.value.trim();
-            if (taskText == "") {
+            const taskText = taskInput1.value.trim();
+            if (taskText === "") {
                 alert("Please enter a task!");
                 return;
             }
@@ -51,18 +51,19 @@
             li.innerHTML = `
                 <span>${taskText}</span>
                 <button onclick="removeTask(this)">Remove</button>
-                <button onclick="completeTask()">Complete</button>
+                <button onclick="completeTask(this)">Complete</button>
             `;
-            taskList.appendChild(li);
-            taskInput.innerText = "";
+            taskList1.appendChild(li);
+            taskInput1.value = ""; // ✅ Fix: Clear input field properly
         }
 
         function removeTask(button) {
             const li = button.parentElement;
-            taskList.removeChild(li);
+            taskList1.removeChild(li);
         }
 
-        function completeTask() {
+        function completeTask(button) {
+            const li = button.parentElement;
             li.classList.toggle("completed");
         }
 
