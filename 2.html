@@ -45,7 +45,7 @@ const resultDiv = document.getElementById("result");
 function handleClick() {
 const name = nameInput.value;
 const points = parseFloat(mistakeinput.value);
-const maxPoints = parseFloat(maxPointsInput);
+const maxPoints = parseFloat(maxPointsInput.value);
 const gradingScheme = gradingSchemeSelect.value;
 
 // Validate inputs
@@ -59,7 +59,7 @@ resultDiv.innerHTML =
 return;
 }
 
-const grade = "";
+let grade = "";
 if (gradingScheme === "procenti") {
 const percentage = (points / maxPoints) * 100;
 grade = `Jūsu procentuālā vērtība ir: ${percentage.toFixed(2)}%`;
@@ -80,7 +80,7 @@ grade = "Jūsu burtu vērtējums ir: F";
 resultDiv.innerHTML = grade;
 }
 
-calculateBtn.addEventListener("click", handleClick());
+calculateBtn.addEventListener("click", handleClick);
 
 // === TERMINI un KODA PIEMĒRI ===
 // input, button, id, class, script, const, let, document, querySelector, getElementById,
