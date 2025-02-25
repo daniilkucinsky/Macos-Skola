@@ -28,18 +28,18 @@
     </select>
     <br /><br />
 
-    <button>Convert</button>
+    <button id="convert">Convert</button>
     <p id="results"></p>
 
     <script>
         const convertBtn = document.getElementById("convert"); // ❌
         const tempInput = document.getElementById("temperature");
         const unitSelect = document.getElementById("unit");
-        const resultDiv = document.getElementById("result"); // ❌
+        const resultDiv = document.getElementById("results"); // ❌
 
         function convertTemperature() {
-            const temp = parseFloat(temperature); // ❌
-            const unit = unitSelect.values; // ❌
+            const temp = parseFloat(tempInput.value); // ❌
+            const unit = unitSelect.value; // ❌
 
             if (isNaN(temp)) {
                 resultDiv.innerHTML = "Please enter a valid number.";
@@ -47,16 +47,16 @@
             }
 
             let convertedTemp;
-            if (unit = "C") { // ❌
-                convertedTemp == (temp * 9 / 5) + 32; // ❌
+            if (unit === "C") { // ❌
+                convertedTemp = (temp * 9 / 5) + 32; // ❌
                 resultDiv.innerHTML = `${temp}°C is ${convertedTemp.toFixed(2)}°F`;
-            } else if (unit == "F") {
+            } else if (unit === "F") {
                 convertedTemp = (temp - 32) * 5 / 9;
                 resultDiv.innerText = `${temp}°F is ${convertedTemp.toFixed(2)}°C`;
             }
         }
 
-        convertBtn.addEventListener("click", convertTemperature()); // ❌
+        convertBtn.addEventListener("click", convertTemperature); // ❌
     </script>
 </body>
 </html>
