@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+
+    <label for="temperature">Enter temperature:</label>
+    <input type="text" id="temperature" /><br /><br />
+
+    <label for="unit">Choose unit:</label>
+    <select id="unit">
+        <option value="C">Celsius to Fahrenheit</option>
+        <option value="F">Fahrenheit to Celsius</option>
+    </select>
+    <br /><br />
+
+    <button>Convert</button>
+    <p id="results"></p>
+
+    <script>
+        const convertBtn = document.getElementById("convert"); // ❌
+        const tempInput = document.getElementById("temperature");
+        const unitSelect = document.getElementById("unit");
+        const resultDiv = document.getElementById("result"); // ❌
+
+        function convertTemperature() {
+            const temp = parseFloat(temperature); // ❌
+            const unit = unitSelect.values; // ❌
+
+            if (isNaN(temp)) {
+                resultDiv.innerHTML = "Please enter a valid number.";
+                return;
+            }
+
+            let convertedTemp;
+            if (unit = "C") { // ❌
+                convertedTemp == (temp * 9 / 5) + 32; // ❌
+                resultDiv.innerHTML = `${temp}°C is ${convertedTemp.toFixed(2)}°F`;
+            } else if (unit == "F") {
+                convertedTemp = (temp - 32) * 5 / 9;
+                resultDiv.innerText = `${temp}°F is ${convertedTemp.toFixed(2)}°C`;
+            }
+        }
+
+        convertBtn.addEventListener("click", convertTemperature()); // ❌
+    </script>
+</body>
+</html>
