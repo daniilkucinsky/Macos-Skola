@@ -45,9 +45,9 @@
         const resultDiv = document.getElementById("results");
 
         function calculate() {
-            const num1 = parseInt(num1Input);
+            const num1 = parseInt(num1Input.value);
             const num2 = parseFloat(num2Input.value);
-            const operation = operationSelect.values;
+            const operation = operationSelect.value;
 
             if (isNaN(num1) || isNaN(num2)) {
                 resultDiv.innerHTML = "Lūdzu, ievadiet derīgus skaitļus.";
